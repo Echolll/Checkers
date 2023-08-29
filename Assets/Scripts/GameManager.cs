@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class GameManager : MonoBehaviour
+public class GameManager : MonoBehaviour , ISerializable
 {
     [SerializeField] private PlaybleSide playbleSide;
     [SerializeField] private CameraMover cameraMover;
@@ -26,6 +26,8 @@ public class GameManager : MonoBehaviour
     public event Action ObjectMoved;
 
     public event Action<ColorType> GameEnded;
+    
+    public event Action StepOver;
 
     private void Awake()
     {
